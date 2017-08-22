@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en" ng-app="atento">
+    <head>
+        <!-- Site Title-->
+        <title>Atento Peru</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+        <!-- Stylesheets--> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/miStyle.css" rel="stylesheet" type="text/css"/>
+        <!--[if lt IE 10]>
+<div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+<script src="js/html5shiv.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-controller="appMain">
+        <!-- Page-->
+        <div class="page"> 
+            <div id="page-loader">
+                <div class="load-container"> 
+                    <img src="images/logo.png" class="item" id="Layer_1">
+                </div>
+            </div>
+            <!-- Page Header -->
+            <header class="page-header section">
+                <!-- RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-md-stick-up-offset="180px" data-lg-stick-up-offset="50px" data-md-stick-up="true" data-lg-stick-up="true">
+                        <div class="rd-navbar-aside-outer">
+                            <div class="rd-navbar-aside__toggle rd-navbar-static--hidden" data-rd-navbar-toggle=".rd-navbar-aside"><span></span></div>
+                            <div class="rd-navbar-aside">
+                                <div class="object-inline">
+                                    <span class="icon icon-sm material-icons-phone_iphone"></span>
+                                    <a href="callto:{{atento.telefono}}">{{atento.telefono}}</a>
+                                </div>
+                                <ul class="list-inline-xs">
+                                    <li ng-repeat="social in sociallinks " ><a ng-class="social.icon" href="{{social.link}}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!-- RD Navbar Panel -->
+                                <div class="rd-navbar-panel">
+                                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap">
+                                        <span></span>
+                                    </button>
+                                    <!-- RD Navbar Brand-->
+                                    <div class="rd-navbar-brand"> 
+                                        <a class="brand" href="index.html">
+                                            <div class="brand__name">
+                                                <img src="images/logo.png" alt="" width="215" height="32"/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- RD Navbar Nav-->
+                                <div class="rd-navbar-nav-wrap"> 
+                                    <div class="rd-navbar-nav-wrap__element">
+                                        <!-- RD Navbar Search-->
+                                        <div class="rd-navbar-search rd-navbar-search-toggled">
+                                            <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"></button>
+                                            <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                                                <div class="form-wrap">
+                                                    <input class="form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                                                    <label class="form-label" for="rd-navbar-search-form-input">Search</label>
+                                                </div>
+                                                <button class="rd-navbar-search-submit" type="submit"></button>
+                                                <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                                            </form>
+                                        </div>
+                                    </div> 
+                                    <ul class="rd-navbar-nav">
+                                        <!--<li class="active">
+                                            <figure>
+                                    <img src="images/icons/contact.png" alt="contact">
+                                </figure> -->
+                                       
+                                        <li ng-repeat="xmenu in atento_menu">
+                                            <a href="{{xmenu.href}}">{{xmenu.title}}</a>
+                                            <ul class="rd-navbar-dropdown" ng-hide="!isSubmenu(xmenu.submenu)">
+                                                <li ng-repeat="submenu in xmenu.submenu"><a href="{{submenu.href}}">{{submenu.title}}</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <section class="section section-swiper"> 
+                <!-- Swiper-->
+                <div class="swiper-container swiper-slider swiper-slider_style-1" data-autoplay="4000" data-simulate-touch="true">
+                    <div class="swiper-wrapper"> 
+
+                        <div class="swiper-slide" data-slide-bg="images/slider/slider_59554a5c1a531.jpg">
+                            <div class="swiper-slide-caption">
+                                <div class="shell">
+                                    <div class="range">
+                                        <div class="cell-sm-9">
+                                            <h2 data-caption-animate="fadeInRightSmall-v2" data-caption-delay="260">
+                                                Atento lanza su unidad de negocio Digital para impulsar la experiencia del cliente en la era digital</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide" data-slide-bg="images/slider/slider_591207a93503b.jpg">
+                            <div class="swiper-slide-caption">
+                                <div class="shell">
+                                    <div class="range">
+                                        <div class="cell-sm-9">
+                                            <h2 data-caption-animate="fadeInRightSmall-v2" data-caption-delay="200">
+                                                Atento amplía su alianza con Itaú en Brasil 
+                                            </h2>
+                                            <h4 data-caption-animate="fadeInLeftSmall">
+                                                El máximo galardón de la industria del marketing directo e interactivo en América Latina.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-slide-bg="images/slider/slider_5811cd0dc505a.jpg">
+                            <div class="swiper-slide-caption">
+                                <div class="shell">
+                                    <div class="range">
+                                        <div class="cell-sm-9">
+                                            <h2 data-caption-animate="fadeInLeftSmall-v2">
+                                                Atento una de las 25 Mejores Multinacionales para Trabajar en el Mundo en 2016                                </h2>
+                                            <h4 data-caption-animate="fadeInRightSmall-v2" data-caption-delay="50">
+                                                Figura en la lista global de Great Place to Work® por cuarto año consecutivo                                </h4>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Swiper Pagination-->
+                    <div class="swiper-pagination-wrap">
+                        <div class="swiper-pagination swiper-pagination_marked"></div>
+                    </div>
+                    <!-- Swiper Navigation-->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <!-- Latest videos-->
+            <!--section class="section section-lg bg-white">
+                <div class="shell">
+                    <h4 class="wow fadeIn">Welcome to pediatric dentistry!</h4>
+                    <div class="range range-50">
+                        <div class="cell-sm-6 cell-md-4 wow fadeInUpSmall">
+            <!-- Post minimal--
+            <article class="post-video">
+                <p class="post-video__title"><a href="single-post.html">Providing Expert Care</a></p>
+                <div class="post-video__media">
+                    <img class="post-video__image" src="images/post-5-450x268.jpg" alt="" width="450" height="268"/>
+                </div>
+                <div class="post-video__main">
+                    <p>Our pediatric dentists are specialists in children's dental care. They coordinate orthodontic care at its highest level.</p>
+                </div>
+            </article>
+        </div>
+        <div class="cell-sm-6 cell-md-4 wow fadeInUpSmall" data-wow-delay=".2s">
+            <!-- Post video--
+            <article class="post-video">
+                <p class="post-video__title"><a href="single-post.html">Friendly Atmosphere </a></p>
+                <div class="post-video__media"><img class="post-video__image" src="images/post-6-450x268.jpg" alt="" width="450" height="268"/>
+                </div>
+                <div class="post-video__main">
+                    <p>Pediatric dentists are trained to create a friendly, fun, social atmosphere for children`s visit.</p>
+                </div>
+            </article>
+        </div>
+        <div class="cell-sm-6 cell-md-4 wow fadeInUpSmall" data-wow-delay=".4s">
+            <!-- Post video--
+            <article class="post-video">
+                <p class="post-video__title"><a href="single-post.html">Individual Approach</a></p>
+                <div class="post-video__media"><img class="post-video__image" src="images/post-7-450x268.jpg" alt="" width="450" height="268"/>
+                </div>
+                <div class="post-video__main">
+                    <p>DentaKids will provide your children with individualized care, education and a personalized treatment plan.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+</section> -->
+
+            <!-- How it works-->
+            <section class="section section-lg bg-primary">
+                <div class="shell">
+                    <h4 class="wow fadeIn">Portafolio de Soluciones</h4>
+                    <div class="range range-50">
+                        <div class="cell-xs-4 cell-md-2 wow fadeInLeftSmall">
+                            <!-- Blurb minimal-->
+                            <article class="blurb-minimal blurb-minimal_limited"><span class="blurb-minimal__icon fl-fill-round-icons-star150"></span>
+                                <h5 class="blurb-minimal__title">Ventas</h5>
+
+                            </article>
+                        </div>
+                        <div class="cell-xs-4 cell-md-2 wow fadeInLeftSmall" data-wow-delay=".1s">
+                            <!-- Blurb minimal-->
+                            <article class="blurb-minimal blurb-minimal_limited"><span class="blurb-minimal__icon fl-fill-round-icons-persons11"></span>
+                                <h5 class="blurb-minimal__title">Atencion al cliente</h5>
+
+                            </article>
+                        </div>
+                        <div class="cell-xs-4 cell-md-2 wow fadeInLeftSmall" data-wow-delay=".2s">
+                            <!-- Blurb minimal-->
+                            <article class="blurb-minimal blurb-minimal_limited"><span class="blurb-minimal__icon fl-fill-round-icons-calendar143"></span>
+                                <h5 class="blurb-minimal__title">Soporte Tecnico</h5>
+
+                            </article>
+                        </div>
+                        <div class="cell-xs-4 cell-md-2 wow fadeInLeftSmall" data-wow-delay=".3s">
+                            <!-- Blurb minimal-->
+                            <article class="blurb-minimal blurb-minimal_limited"><span class="blurb-minimal__icon fl-fill-round-icons-wallet22"></span>
+                                <h5 class="blurb-minimal__title">Cobranza</h5>
+
+                            </article>
+                        </div>
+                        <div class="cell-xs-4 cell-md-2 wow fadeInLeftSmall" data-wow-delay=".3s">
+                            <!-- Blurb minimal-->
+                            <article class="blurb-minimal blurb-minimal_limited"><span class="blurb-minimal__icon fl-fill-round-icons-wallet22"></span>
+                                <h5 class="blurb-minimal__title">Back Office</h5>
+
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="sections-fluid-wrap">
+                <section class="section">
+                    <div class="shell-fluid shell-condensed">
+                        <div class="range range-sm-center range-md-left range-md-middle range-condensed">
+                            <div class="cell-sm-10 cell-md-6">
+                                <div class="cell__inner">
+                                    <h4 class="text-primary">Sectores</h4>
+                                    <p>Cada sector afronta sus propios retos, pero todos coinciden en la necesidad de aumentar la competitividad y prosperar en la era digital.</p>
+                                    <!--div class="group-lg">
+                                        <a class="button button-primary" href="make-an-appointment.html">Leer Mas</a>
+                                    </div -->
+                                </div>
+                            </div>
+                            <div class="cell-sm-10 cell-md-6 cell_image"><img src="images/industries.jpg" alt="" width="960" height="896"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="shell-fluid shell-condensed">
+                        <div class="range range-sm-center range-md-left range-md-middle range-md-reverse range-condensed">
+                            <div class="cell-sm-10 cell-md-6">
+                                <div class="cell__inner">
+                                    <h4 class="text-primary">Atento: Great Place To Work</h4>
+                                    <p>Great Place to Work® vuelve a reconocer en 2016 nuestra labor y nos sitúa como una de las 25 mejores compañías para trabajar en el mundo.</p>
+                                    <!--<div class="group-lg">
+                                        <a class="button button-primary" href="make-an-appointment.html">Make an appointment</a>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="cell-sm-10 cell-md-6 cell_image"><img src="images/coffee.jpg" alt="" width="960" height="896"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="section section-lg bg-gray-dark bg-image fact-section">
+                <div class="shell">
+                    <div class="range">
+                        <div class="cell-sm-12 cell-md-12">
+                            <div class="container">
+                                <div class="row facts">
+                                    <div class="col-md-6 fact-container">
+                                        <ul class="facts">
+                                            <li>
+                                                <div class="fact-container">
+                                                    <p class="text-large">Atento en el Mundo</p>
+                                                    <p class="text-small">95 Centros de contacto y 90 mil posiciones en 13 Países</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="fact-container">
+                                                    <p class="text-large">Número de clientes</p>
+                                                    <p class="text-small">Más de 400 en 3 continentes</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="fact-container">
+                                                    <p class="text-large">Número de empleados</p>
+                                                    <p class="text-small">Más de 150,000</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="fact-container">
+                                                    <p class="text-large">Certificaciones</p>
+                                                    <p class="text-small">COPC, ISO 9001 2008</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="fact-container">
+                                                    <p class="text-large">Metodología</p>
+                                                    <p class="text-small">Seis Sigma</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <img src="images/map2.jpg" alt="map2" class="img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page Footer-->
+            <footer class="section footer-light">
+                <div class="shell text-center text-sm-left"> 
+                    <a class="brand" href="index.html">
+                        <div class="brand__name">
+                            <img src="images/logo.png" alt="" width="215" height="32"/>
+                        </div>
+                    </a>
+                    <p class="rights">
+                        <span>Copyright </span>
+                        <span>&copy;</span>
+                        <span id="copyright-year"></span>
+                        &bull;&nbsp;Atento
+                        <!-- {%FOOTER_LINK}-->
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+        <!-- Javascript-->
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script src="js/configuration.js"></script>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

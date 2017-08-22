@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en" ng-app="atento">
+    <head>
+        <!-- Site Title-->
+        <title>Atento Peru</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+        <!-- Stylesheets-->
+        
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/miStyle.css" rel="stylesheet" type="text/css"/>
+        <!--[if lt IE 10]>
+<div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+<script src="js/html5shiv.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-controller="appMain">
+        <!-- Page-->
+        <div class="page"> 
+            <div id="page-loader">
+                <div class="load-container"> 
+                    <img src="images/logo.png" class="item" id="Layer_1">
+                </div>
+            </div>
+            <!-- Page Header -->
+            <header class="page-header section">
+                <!-- RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-md-stick-up-offset="180px" data-lg-stick-up-offset="50px" data-md-stick-up="true" data-lg-stick-up="true">
+                        <div class="rd-navbar-aside-outer">
+                            <div class="rd-navbar-aside__toggle rd-navbar-static--hidden" data-rd-navbar-toggle=".rd-navbar-aside"><span></span></div>
+                            <div class="rd-navbar-aside">
+                                <div class="object-inline">
+                                    <span class="icon icon-sm material-icons-phone_iphone"></span>
+                                    <a href="callto:{{atento.telefono}}">{{atento.telefono}}</a>
+                                </div>
+                                <ul class="list-inline-xs">
+                                    <li ng-repeat="social in sociallinks" ><a ng-class="social.icon" href="{{social.link}}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!-- RD Navbar Panel -->
+                                <div class="rd-navbar-panel">
+                                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap">
+                                        <span></span>
+                                    </button>
+                                    <!-- RD Navbar Brand-->
+                                    <div class="rd-navbar-brand"> 
+                                        <a class="brand" href="index.html">
+                                            <div class="brand__name">
+                                                <img src="images/logo.png" alt="" width="215" height="32"/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- RD Navbar Nav-->
+                                <div class="rd-navbar-nav-wrap"> 
+                                    <div class="rd-navbar-nav-wrap__element">
+                                        <!-- RD Navbar Search-->
+                                        <div class="rd-navbar-search rd-navbar-search-toggled">
+                                            <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"></button>
+                                            <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                                                <div class="form-wrap">
+                                                    <input class="form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                                                    <label class="form-label" for="rd-navbar-search-form-input">Search</label>
+                                                </div>
+                                                <button class="rd-navbar-search-submit" type="submit"></button>
+                                                <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                                            </form>
+                                        </div>
+                                    </div> 
+                                    <ul class="rd-navbar-nav">
+                                        <!--<li class="active">
+                                            <figure>
+                                    <img src="images/icons/contact.png" alt="contact">
+                                </figure> -->
+
+                                        <li ng-repeat="xmenu in atento_menu">
+                                            <a href="{{xmenu.href}}">{{xmenu.title}}</a>
+                                            <ul class="rd-navbar-dropdown" ng-hide="!isSubmenu(xmenu.submenu)">
+                                                <li ng-repeat="submenu in xmenu.submenu"><a href="{{submenu.href}}">{{submenu.title}}</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <section class="section section-custom-2 bg-white figures">
+                <div class="shell blog">
+                    <div class="range range-50"> 
+                        <div class="cell-md-8 blog__main"> 
+                            <article class="post post-strict">
+                                <div class="post-strict__main">
+                                    <h4 class="txt-blue">Liderazgo en el Mercado</h4>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <p class="data">Líder indiscutible en América Latina (18,3% participación de mercado en la región en el año 2015 de acuerdo con Frost & Sullivan).
+                                                Jugador número uno en mercados clave como: Brasil, México, Argentina, Perú y Chile.
+                                                Cuadrante Mágico de Gartner: Incluidos en la categoría de “líderes” para Contact Center BPO deI Magic Cuadrant de Gartner.</p>
+                                        </div>
+                                    </div>
+                                    <div class="line"></div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <p class="data">
+                                                En Atento somos apasionados de las experiencias de nuestros clientes. Día a día, conectamos a más de 500 millones de consumidores con marcas líderes en 13 países. De esta forma, contribuimos a que importantes empresas atiendan las crecientes demandas de sus clientes al tiempo que mejoramos su eficiencia.
+
+                                                Logramos esto por medio de experiencias diferenciadas que generan valor a los clientes y las compañías. Estas experiencias se logran a través de un modelo único que combina personas, soluciones y canales.
+
+                                                Atento se mantiene como el proveedor líder en soluciones, servicios y relaciones con clientes más importantes de América Latina y el tercero a nivel mundial. Nuestra fuerte presencia y capacidad operativa en América Latina y España, nos permite mantener la operación de nuestros clientes en mercados locales, así como ofrecer soluciones “Nearshore”, principalmente a compañías en los Estados Unidos de Norteamérica.
+
+                                                Hemos desarrollado relaciones de muchos años con nuestros clientes gracias al profundo entendimiento que tenemos de los sectores y ambientes culturales en los que operan. Como resultado de esto, aportamos inteligencia y análisis de alto valor, consecuencia de nuestra operación e interacción con los consumidores. Esto permite afianzar la relación de negocios y transformarla en una de socios estratégicos lo cual permite cumplir de mejor forma con las crecientes expectativas de los consumidores a nivel mundial.
+
+                                                Nuestro equipo, altamente motivado, conformado por más de 150,000 empleados, es el motor fundamental que habilita nuestro modelo de negocios, siendo nuestra mayor ventaja competitiva. Esto se refleja en la posición que actualmente tenemos como la única empresa del sector CRM/BPO considerada entre las 25 mejores compañías para trabajar según el ranking anual de World’s Best Multinational Workplaces del Great Place to Work Institute.
+                                            </p></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <h5 class="txt-blue">Misión y Valores Fundamentales</h5>
+                                            <p class="data">
+                                                Nuestra particular cultura corporativa refleja nuestra misión, valores y principios rectores. Éstos, determinan nuestro comportamiento como compañía, enfatizan el trabajo en equipo, la innovación e inspiran a nuestros colaboradores a trabajar con total dedicación a favor de nuestros clientes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <h5 class="txt-blue">Nuestra misión</h5>
+                                            <p class="data">
+                                                Contribuir al éxito de las empresas garantizando la mejor experiencia para sus clientes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="post post-strict">
+                                <div class="post-strict__main">
+                                    <div class="container valores">
+                                        <h5 class="post-strict__title txt-blue">Nuestros valores</h5>
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-12 bg-primary-dark">
+                                                <div>
+                                                    <h5>Compromiso</h5>
+                                                    <p>Estamos comprometidos con el éxito de nuestros clientes.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 bg-primary">
+                                                <div>
+                                                    <h5>Pasión</h5>
+                                                    <p>Trabajamos con pasión, entusiasmo y con la ambición de ser mejores cada día.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-12 bg-primary">
+                                                <div>
+                                                    <h5>Integridad</h5>
+                                                    <p >Actuamos con integridad, fieles a nuestros valores, defendiendo lo que creemos y asumiendo la responsabilidad de nuestras acciones.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 bg-primary-dark">
+                                                <div>
+                                                    <h5>Confianza</h5>
+                                                    <p>Garantizamos la confianza, transparencia y respeto en las relaciones con todos nuestros grupos de interés (clientes, empleados, proveedores, sociedad y accionistas).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page Footer-->
+            <footer class="section footer-light">
+                <div class="shell text-center text-sm-left"> 
+                    <a class="brand" href="index.html">
+                        <div class="brand__name">
+                            <img src="images/logo.png" alt="" width="215" height="32"/>
+                        </div>
+                    </a>
+                    <p class="rights">
+                        <span>Copyright </span>
+                        <span>&copy;</span>
+                        <span id="copyright-year"></span>
+                        &bull;&nbsp;Atento
+                        <!-- {%FOOTER_LINK}-->
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+        <!-- Javascript-->
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script src="js/configuration.js"></script>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+.figures .concept {
+    color: #005589;
+    font-family: 'omnessemibold';
+    margin: 0;
+    font-size: 16px;
+
+}
+.line{
+    border-bottom: 1px solid #005589;
+    padding-bottom: 33px;
+}
+.figures .data {
+    font-size: 16px;
+}
+.txt-blue{
+    color:#005589 !important;
+}
+.fact-section .facts li:hover .fact-container {
+    background-color: #00a3e0;
+}
+.fact-section .facts li {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    width: 188px;
+    height: 87px;
+    margin-left: -14px;
+}
+.fact-section .facts li .fact-container {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 175px;
+    height: 80px;
+    padding: 12px;
+    z-index: 3;
+}
+.fact-section .facts li p {
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 6px;
+}
+.text-large {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.margin-centro{
+    margin: 50px;
+}
+.bg-primary-dark{
+    background: #005589 !important;
+}
+.color-primary-dark{
+    background: #005589 !important;
+}
+.margin-buttom{
+        margin-bottom: 5.883%;
+}
+
+.valores {
+    width: 100%!important;
+}
+.valores .row>div {
+    margin: 10px; 
+    height: 200px;
+     padding: 32px;
+}
+.valores p,.valores h5{
+    color:white;
+}
+.valores .row {
+    height: 50%;
+}
